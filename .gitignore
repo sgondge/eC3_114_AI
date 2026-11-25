@@ -1,0 +1,43 @@
+# Ignore MDK build artifacts and generated files
+MDK_ARMv5/HT32/54253/Obj/
+MDK_ARMv5/HT32/54253/List/
+MDK_ARMv537/HT32/54253/Obj/
+MDK_ARMv537/HT32/54253/List/
+MDK_ARMv537/Debug/
+MDK_ARMv5/Debug/
+cppcheck/build/
+
+# Common generated build outputs
+*.bin
+*.elf
+*.out
+*.srec
+*.obj
+
+# Generic build artifact file types
+*.o
+*.d
+*.crf
+*.axf
+*.axf.bin
+*.hex
+!RELEASE/*.hex
+!RELEASE/**/*.hex
+!RELEASE/ARCHIVED hex files/*.hex
+*.map
+*.dep
+*.build_log.htm
+*.htm
+
+# Keil/MDK project files
+*.uvprojx
+*.uvguix
+*.uvoptx
+
+# Other generated files
+*.lst
+*.log
+*.bak
+*.tmp
+*.swp
+

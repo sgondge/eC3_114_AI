@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="Segoe UI, Arial, sans-serif">
+  <defs>
+    <style>
+      .title { font-size: 20px; font-weight: 700; fill: #1a1a2e; }
+      .subtitle { font-size: 13px; fill: #555; }
+      .node { font-size: 12px; fill: #222; font-weight: 600; }
+      .small { font-size: 10px; fill: #444; }
+      .decision { font-size: 11px; fill: #333; font-weight: 600; }
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#555"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="32" text-anchor="middle" class="title">Cooking Session  Save-to-Flash Flow</text>
+  <text x="450" y="52" text-anchor="middle" class="subtitle">FSM.c closeSession() ’ EEPROM.c (Emulated EEPROM)</text>
+
+  <!-- Start -->
+  <ellipse cx="120" cy="100" rx="70" ry="28" fill="#e8f4ea" stroke="#4a7c59" stroke-width="2"/>
+  <text x="120" y="96" text-anchor="middle" class="node">User sets</text>
+  <text x="120" y="110" text-anchor="middle" class="node">power level</text>
+
+  <line x1="190" y1="100" x2="230" y2="100" stroke="#555" marker-end="url(#arrow)"/>
+
+  <!-- startSession -->
+  <rect x="230" y="78" width="130" height="44" rx="8" fill="#4a7c59" stroke="#3a6247"/>
+  <text x="295" y="98" text-anchor="middle" fill="#fff" class="node">startSession()</text>
+  <text x="295" y="114" text-anchor="middle" fill="#e8f4ea" font-size="10">onTime, pwr, active=true</text>
+
+  <line x1="360" y1="100" x2="400" y2="100" stroke="#555" marker-end="url(#arrow)"/>
+
+  <!-- Cooking -->
+  <rect x="400" y="72" width="120" height="56" rx="8" fill="#5c7a4a" stroke="#4a6340"/>
+  <text x="460" y="96" text-anchor="middle" fill="#fff" class="node">STATE_COOKING</text>
+  <text x="460" y="112" text-anchor="middle" fill="#e8f4ea" font-size="10">I2C · Ag/Vg avg</text>
+
+  <line x1="520" y1="100" x2="560" y2="100" stroke="#555" marker-end="url(#arrow)"/>
+
+  <!-- End trigger -->
+  <rect x="560" y="78" width="130" height="44" rx="8" fill="#c9a227" stroke="#a8841f"/>
+  <text x="625" y="96" text-anchor="middle" fill="#fff" class="node">Session ends</text>
+  <text x="625" y="112" text-anchor="middle" fill="#fff8e0" font-size="10">pwr=0 · off · timer</text>
+
+  <line x1="625" y1="122" x2="625" y2="155" stroke="#555" marker-end="url(#arrow)"/>
+
+  <!-- closeSession -->
+  <rect x="555" y="155" width="140" height="40" rx="8" fill="#4a6fa5" stroke="#3d5a80"/>
+  <text x="625" y="180" text-anchor="middle" fill="#fff" class="node">closeSession()</text>
+
+  <line x1="625" y1="195" x2="625" y2="225" stroke="#555" marker-end="url(#arrow)"/>
+
+  <!-- Decision: active & duration -->
+  <polygon points="625,225 705,265 625,305 545,265" fill="#fff8e0" stroke="#c9a227" stroke-width="2"/>
+  <text x="625" y="258" text-anchor="middle" class="decision">duration</text>
+  <text x="625" y="272" text-anchor="middle" class="decision">&gt; 5 s ?</text>
+
+  <!-- No branch -->
+  <line x1="545" y1="265" x2="200" y2="265" stroke="#999" stroke-dasharray="5,3"/>
+  <line x1="200" y1="265" x2="200" y2="470" stroke="#999" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
+  <text x="370" y="258" class="small" fill="#888">No  discard</text>
+
+  <!-- Yes -->
+  <line x1="625" y1="305" x2="625" y2="335" stroke="#555" marker-end="url(#arrow)"/>
+  <text x="640" y="325" class="small">Yes</text>
+
+  <!-- offT > onT -->
+  <polygon points="625,335 700,370 625,405 550,370" fill="#fff8e0" stroke="#c9a227" stroke-width="2"/>
+  <text x="625" y="368" text-anchor="middle" class="decision">offT &gt; onT ?</text>
+
+  <line x1="550" y1="370" x2="280" y2="370" stroke="#999" stroke-dasharray="5,3"/>
+  <line x1="280" y1="370" x2="280" y2="470" stroke="#999" stroke-dasharray="5,3"/>
+  <text x="400" y="363" class="small" fill="#888">No  skip save</text>
+
+  <line x1="625" y1="405" x2="625" y2="435" stroke="#555" marker-end="url(#arrow)"/>
+  <text x="640" y="425" class="small">Yes</text>
+
+  <!-- count check -->
+  <polygon points="625,435 715,475 625,515 535,475" fill="#ede7f5" stroke="#7b5ea7" stroke-width="2"/>
+  <text x="625" y="468" text-anchor="middle" class="decision">count &lt;</text>
+  <text x="625" y="482" text-anchor="middle" class="decision">MAX ?</text>
+
+  <!-- Append path -->
+  <line x1="715" y1="475" x2="780" y2="475" stroke="#555" marker-end="url(#arrow)"/>
+  <text x="745" y="468" class="small">Yes</text>
+  <rect x="780" y="450" width="110" height="50" rx="6" fill="#b85c38" stroke="#9a4a2c"/>
+  <text x="835" y="472" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">Write at</text>
+  <text x="835" y="486" text-anchor="middle" fill="#fff" font-size="10" font-family="Consolas,monospace">0x19000+N×20</text>
+  <text x="835" y="498" text-anchor="middle" fill="#ffe8dc" font-size="9">count++</text>
+
+  <!-- Overwrite path -->
+  <line x1="535" y1="475" x2="120" y2="475" stroke="#555" marker-end="url(#arrow)"/>
+  <text x="500" y="468" class="small">No (full)</text>
+  <rect x="10" y="450" width="110" height="50" rx="6" fill="#9a4a2c" stroke="#7a3a22"/>
+  <text x="65" y="472" text-anchor="middle" fill="#fff" font-size="11" font-weight="600">Overwrite</text>
+  <text x="65" y="486" text-anchor="middle" fill="#fff" font-size="10">last slot</text>
+  <text x="65" y="498" text-anchor="middle" fill="#ffe8dc" font-size="9">page erase+write</text>
+
+  <!-- Done -->
+  <rect x="155" y="455" width="90" height="40" rx="20" fill="#e8f4ea" stroke="#4a7c59" stroke-width="2"/>
+  <text x="200" y="480" text-anchor="middle" class="node">Done</text>
+
+  <text x="450" y="510" text-anchor="middle" class="small" fill="#666">Ag, Vg from globalPayload.stat written with each session record</text>
+</svg>

@@ -1,0 +1,200 @@
+{
+    "version": "2.0.0",
+    "options": {
+        "cwd": "${workspaceFolder}"
+    },
+    "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true,
+        "showReuseMessage": false
+    },
+    "tasks": [
+        {
+            "label": "Keil: Build AP",
+            "type": "shell",
+            "command": "powershell",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\.vscode\\keil-build.ps1",
+                     "-Project", "MDK_ARMv5\\Project_54253.uvprojx", "-Action", "build"],
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": [
+                {
+                    "owner": "armcc",
+                    "fileLocation": ["autoDetect", "${workspaceFolder}\\MDK_ARMv5"],
+                    "pattern": {
+                        "regexp": "^\\s*(.+?)\\((\\d+)\\):\\s+(error|warning|note|info):\\s+(.*)$",
+                        "file": 1, "line": 2, "severity": 3, "message": 4
+                    }
+                },
+                {
+                    "owner": "armlink",
+                    "fileLocation": ["autoDetect", "${workspaceFolder}\\MDK_ARMv5"],
+                    "pattern": {
+                        "regexp": "^\\s*(.+?):\\s+(Error|Warning):\\s+(L\\d+[EW]):\\s+(.*)$",
+                        "file": 1, "severity": 2, "code": 3, "message": 4
+                    }
+                },
+                {
+                    "owner": "cppcheck",
+                    "source": "cppcheck",
+                    "fileLocation": "absolute",
+                    "pattern": {
+                        "regexp": "^(.+?)\\((\\d+),(\\d+)\\):\\s+(error|warning|info):\\s+\\[cppcheck\\]\\s+(\\S+):\\s+(.*)$",
+                        "file": 1, "line": 2, "column": 3, "severity": 4, "code": 5, "message": 6
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Keil: Build IAP",
+            "type": "shell",
+            "command": "powershell",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\.vscode\\keil-build.ps1",
+                     "-Project", "MDK_ARMv5\\IAP.uvprojx", "-Action", "build"],
+            "group": "build",
+            "problemMatcher": [
+                {
+                    "owner": "armcc",
+                    "fileLocation": ["autoDetect", "${workspaceFolder}\\MDK_ARMv5"],
+                    "pattern": {
+                        "regexp": "^\\s*(.+?)\\((\\d+)\\):\\s+(error|warning|note|info):\\s+(.*)$",
+                        "file": 1, "line": 2, "severity": 3, "message": 4
+                    }
+                },
+                {
+                    "owner": "armlink",
+                    "fileLocation": ["autoDetect", "${workspaceFolder}\\MDK_ARMv5"],
+                    "pattern": {
+                        "regexp": "^\\s*(.+?):\\s+(Error|Warning):\\s+(L\\d+[EW]):\\s+(.*)$",
+                        "file": 1, "severity": 2, "code": 3, "message": 4
+                    }
+                },
+                {
+                    "owner": "cppcheck",
+                    "source": "cppcheck",
+                    "fileLocation": "absolute",
+                    "pattern": {
+                        "regexp": "^(.+?)\\((\\d+),(\\d+)\\):\\s+(error|warning|info):\\s+\\[cppcheck\\]\\s+(\\S+):\\s+(.*)$",
+                        "file": 1, "line": 2, "column": 3, "severity": 4, "code": 5, "message": 6
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Keil: Build All (IAP + AP)",
+            "dependsOrder": "sequence",
+            "dependsOn": ["Keil: Build IAP", "Keil: Build AP"],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Keil: Rebuild AP",
+            "type": "shell",
+            "command": "powershell",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\.vscode\\keil-build.ps1",
+                     "-Project", "MDK_ARMv5\\Project_54253.uvprojx", "-Action", "rebuild"],
+            "group": "build",
+            "problemMatcher": [
+                {
+                    "owner": "armcc",
+                    "fileLocation": ["autoDetect", "${workspaceFolder}\\MDK_ARMv5"],
+                    "pattern": {
+                        "regexp": "^\\s*(.+?)\\((\\d+)\\):\\s+(error|warning|note|info):\\s+(.*)$",
+                        "file": 1, "line": 2, "severity": 3, "message": 4
+                    }
+                },
+                {
+                    "owner": "armlink",
+                    "fileLocation": ["autoDetect", "${workspaceFolder}\\MDK_ARMv5"],
+                    "pattern": {
+                        "regexp": "^\\s*(.+?):\\s+(Error|Warning):\\s+(L\\d+[EW]):\\s+(.*)$",
+                        "file": 1, "severity": 2, "code": 3, "message": 4
+                    }
+                },
+                {
+                    "owner": "cppcheck",
+                    "source": "cppcheck",
+                    "fileLocation": "absolute",
+                    "pattern": {
+                        "regexp": "^(.+?)\\((\\d+),(\\d+)\\):\\s+(error|warning|info):\\s+\\[cppcheck\\]\\s+(\\S+):\\s+(.*)$",
+                        "file": 1, "line": 2, "column": 3, "severity": 4, "code": 5, "message": 6
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Keil: Rebuild IAP",
+            "type": "shell",
+            "command": "powershell",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\.vscode\\keil-build.ps1",
+                     "-Project", "MDK_ARMv5\\IAP.uvprojx", "-Action", "rebuild"],
+            "group": "build",
+            "problemMatcher": [
+                {
+                    "owner": "armcc",
+                    "fileLocation": ["autoDetect", "${workspaceFolder}\\MDK_ARMv5"],
+                    "pattern": {
+                        "regexp": "^\\s*(.+?)\\((\\d+)\\):\\s+(error|warning|note|info):\\s+(.*)$",
+                        "file": 1, "line": 2, "severity": 3, "message": 4
+                    }
+                },
+                {
+                    "owner": "armlink",
+                    "fileLocation": ["autoDetect", "${workspaceFolder}\\MDK_ARMv5"],
+                    "pattern": {
+                        "regexp": "^\\s*(.+?):\\s+(Error|Warning):\\s+(L\\d+[EW]):\\s+(.*)$",
+                        "file": 1, "severity": 2, "code": 3, "message": 4
+                    }
+                },
+                {
+                    "owner": "cppcheck",
+                    "source": "cppcheck",
+                    "fileLocation": "absolute",
+                    "pattern": {
+                        "regexp": "^(.+?)\\((\\d+),(\\d+)\\):\\s+(error|warning|info):\\s+\\[cppcheck\\]\\s+(\\S+):\\s+(.*)$",
+                        "file": 1, "line": 2, "column": 3, "severity": 4, "code": 5, "message": 6
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Keil: Rebuild All (IAP + AP)",
+            "dependsOrder": "sequence",
+            "dependsOn": ["Keil: Rebuild IAP", "Keil: Rebuild AP"],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "Keil: Clean AP",
+            "type": "shell",
+            "command": "powershell",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\.vscode\\keil-build.ps1",
+                     "-Project", "MDK_ARMv5\\Project_54253.uvprojx", "-Action", "clean"],
+            "problemMatcher": []
+        },
+        {
+            "label": "Keil: Clean IAP",
+            "type": "shell",
+            "command": "powershell",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\.vscode\\keil-build.ps1",
+                     "-Project", "MDK_ARMv5\\IAP.uvprojx", "-Action", "clean"],
+            "problemMatcher": []
+        },
+        {
+            "label": "Keil: Flash AP",
+            "type": "shell",
+            "command": "powershell",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\.vscode\\keil-build.ps1",
+                     "-Project", "MDK_ARMv5\\Project_54253.uvprojx", "-Action", "flash"],
+            "problemMatcher": []
+        },
+        {
+            "label": "Keil: Flash IAP",
+            "type": "shell",
+            "command": "powershell",
+            "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\.vscode\\keil-build.ps1",
+                     "-Project", "MDK_ARMv5\\IAP.uvprojx", "-Action", "flash"],
+            "problemMatcher": []
+        }
+    ]
+}

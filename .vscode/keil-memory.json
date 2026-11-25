@@ -1,0 +1,48 @@
+{
+    "thresholds": {
+        "notePercent": 80,
+        "warnPercent": 90,
+        "minStackBytes": 1024,
+        "maxHeapPercentOfRam": 40,
+        "stackMarginPercent": 25,
+        "minHeapBytesIfMallocUsed": 2048,
+        "blockingFunctionPattern": "(?i)delay|_wait|ProcessEvents|enterState",
+        "topN": 8
+    },
+    "projects": {
+        "Project_54253.uvprojx": {
+            "startupFile": "startup_ht32f5xxxx_09.s",
+            "scatterFile": "linker.lin",
+            "ram": { "name": "SRAM", "start": "0x20000000", "end": "0x20004000" },
+            "flash": [
+                {
+                    "name": "Embedded IAP image",
+                    "loadRegion": "IAP",
+                    "start": "0x00000000",
+                    "end": "0x00002C00",
+                    "limitReason": "Serial ID / secret key / runtime params page at 0x2C00 (EEPROM.h)"
+                },
+                {
+                    "name": "Application",
+                    "loadRegion": "AP",
+                    "start": "0x00003000",
+                    "end": "0x00018C00",
+                    "limitReason": "cook-session storage starts at 0x18C00 (EEPROM.h NUMBER_COOKING_SESSIONS_ADDRESS)"
+                }
+            ]
+        },
+        "IAP.uvprojx": {
+            "startupFile": "startup_ht32f5xxxx_09.s",
+            "ram": { "name": "SRAM (IAP target setting)", "start": "0x20000000", "end": "0x20002000" },
+            "flash": [
+                {
+                    "name": "IAP bootloader",
+                    "loadRegion": "LR_1",
+                    "start": "0x00000000",
+                    "end": "0x00002C00",
+                    "limitReason": "Serial ID / secret key / runtime params page at 0x2C00; AP starts at 0x3000"
+                }
+            ]
+        }
+    }
+}

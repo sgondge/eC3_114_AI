@@ -1,0 +1,25 @@
+{
+    "VsCodeTaskButtons.showCounter": false,
+    "VsCodeTaskButtons.tasks": [
+        {
+            "label": "$(tools) Build All",
+            "task": "Keil: Build All (IAP + AP)",
+            "tooltip": "Keil: build IAP then AP, with memory analysis"
+        },
+        {
+            "label": "$(gear) Build AP",
+            "task": "Keil: Build AP",
+            "tooltip": "Keil: build application (Project_54253)"
+        },
+        {
+            "label": "$(sync) Rebuild All",
+            "task": "Keil: Rebuild All (IAP + AP)",
+            "tooltip": "Keil: full rebuild of IAP and AP"
+        },
+        {
+            "label": "$(zap) Flash AP",
+            "task": "Keil: Flash AP",
+            "tooltip": "Keil: download application to the target"
+        }
+    ]
+}

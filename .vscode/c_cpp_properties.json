@@ -1,0 +1,71 @@
+{
+    "configurations": [
+        {
+            "name": "Keil AP (Project_54253)",
+            "includePath": [
+                "${workspaceFolder}",
+                "${workspaceFolder}/library",
+                "${workspaceFolder}/library/CMSIS/Include",
+                "${workspaceFolder}/library/Device/Holtek/HT32F5xxxx/Include",
+                "${workspaceFolder}/library/HT32F5xxxx_Driver/inc",
+                "${workspaceFolder}/library/HT32_TouchKey_Library/inc",
+                "${workspaceFolder}/library/HT32_USBD_Library",
+                "${workspaceFolder}/utilities",
+                "${workspaceFolder}/project/AP",
+                "${env:LOCALAPPDATA}/Keil_v5/ARM/ARMCC/include"
+            ],
+            "defines": [
+                "USE_HT32_DRIVER",
+                "USE_HT32F54253_SK",
+                "USE_HT32F54243_53",
+                "USE_MEM_HT32F54253",
+                "USE_HT32_CHIP=20",
+                "USE_LIBCFG_RAM_SIZE=0x4000",
+                "__CC_ARM",
+                "__ARMCC_VERSION=5060960",
+                "__TARGET_ARCH_6S_M",
+                "__packed=__attribute__((packed))",
+                "__irq=",
+                "__asm=",
+                "__inline=inline",
+                "__weak=__attribute__((weak))"
+            ],
+            "cStandard": "c99",
+            "intelliSenseMode": "windows-gcc-arm"
+        },
+        {
+            "name": "Keil IAP",
+            "includePath": [
+                "${workspaceFolder}",
+                "${workspaceFolder}/library/CMSIS/Include",
+                "${workspaceFolder}/library/Device/Holtek/HT32F5xxxx/Include",
+                "${workspaceFolder}/library/HT32F5xxxx_Driver/inc",
+                "${workspaceFolder}/library/HT32F5xxxx_Driver/src",
+                "${workspaceFolder}/library/HT32_USBD_Library/inc",
+                "${workspaceFolder}/utilities",
+                "${workspaceFolder}/IAP",
+                "${workspaceFolder}/project/IAP",
+                "${env:LOCALAPPDATA}/Keil_v5/ARM/ARMCC/include"
+            ],
+            "defines": [
+                "USE_HT32_DRIVER",
+                "USE_HT32F54253_SK",
+                "USE_HT32F54243_53",
+                "USE_MEM_HT32F54253",
+                "USE_HT32_CHIP=20",
+                "USE_LIBCFG_RAM_SIZE=0x2000",
+                "__CC_ARM",
+                "__ARMCC_VERSION=5060960",
+                "__TARGET_ARCH_6S_M",
+                "__packed=__attribute__((packed))",
+                "__irq=",
+                "__asm=",
+                "__inline=inline",
+                "__weak=__attribute__((weak))"
+            ],
+            "cStandard": "c99",
+            "intelliSenseMode": "windows-gcc-arm"
+        }
+    ],
+    "version": 4
+}

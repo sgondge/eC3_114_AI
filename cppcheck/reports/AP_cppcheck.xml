@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="2.21.0"/>
+    <errors>
+        <error id="zerodiv" severity="error" msg="Division by zero." verbose="Division by zero." cwe="369" file0="D:/test/eCOOK3_firmware_OTA/project/AP/buzzer.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/buzzer.c" line="37" column="48" info="Division by zero"/>
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/buzzer.c" line="123" column="15" info="Calling function &apos;Buzzer_Init&apos;, 1st argument &apos;0&apos; value is 0"/>
+        </error>
+        <error id="redundantAssignment" severity="style" msg="Variable &apos;CKCUClock.Bit.PB&apos; is reassigned a value before the old one has been used." verbose="Variable &apos;CKCUClock.Bit.PB&apos; is reassigned a value before the old one has been used." cwe="563" file0="D:/test/eCOOK3_firmware_OTA/project/AP/I2C1.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/I2C1.c" line="77" column="30" info="CKCUClock.Bit.PB is overwritten"/>
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/I2C1.c" line="76" column="30" info="CKCUClock.Bit.PB is assigned"/>
+            <symbol>CKCUClock.Bit.PB</symbol>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;cook_end&gt;=opt_page&apos; is always true" verbose="Condition &apos;cook_end&gt;=opt_page&apos; is always true" cwe="571" file0="D:/test/eCOOK3_firmware_OTA/project/AP/EEPROM.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/EEPROM.c" line="145" column="18" info="Condition &apos;cook_end&gt;=opt_page&apos; is always true"/>
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/EEPROM.c" line="142" column="25" info="Assignment &apos;cook_end=0x0001FF00&apos;, assigned value is 130816"/>
+        </error>
+        <error id="redundantAssignment" severity="style" msg="Variable &apos;CKCUClock.Bit.PC&apos; is reassigned a value before the old one has been used." verbose="Variable &apos;CKCUClock.Bit.PC&apos; is reassigned a value before the old one has been used." cwe="563" file0="D:/test/eCOOK3_firmware_OTA/project/AP/I2C0.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/I2C0.c" line="83" column="30" info="CKCUClock.Bit.PC is overwritten"/>
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/I2C0.c" line="82" column="30" info="CKCUClock.Bit.PC is assigned"/>
+            <symbol>CKCUClock.Bit.PC</symbol>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;temp==-1&apos; is always false" verbose="Condition &apos;temp==-1&apos; is always false" cwe="570" file0="D:/test/eCOOK3_firmware_OTA/project/AP/EEPROM.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/EEPROM.c" line="263" column="10" info="Condition &apos;temp==-1&apos; is always false"/>
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/EEPROM.c" line="261" column="57" info="Calling function &apos;Emulated_EEPROM_Read_Cooking_Session_Num&apos; returns !&lt;=-1"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;write_address&apos; is assigned a value that is never used." verbose="Variable &apos;write_address&apos; is assigned a value that is never used." cwe="563" file0="D:/test/eCOOK3_firmware_OTA/project/AP/EEPROM.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/EEPROM.c" line="346" column="23"/>
+            <symbol>write_address</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;first_word&apos; is assigned a value that is never used." verbose="Variable &apos;first_word&apos; is assigned a value that is never used." cwe="563" file0="D:/test/eCOOK3_firmware_OTA/project/AP/EEPROM.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/EEPROM.c" line="433" column="25"/>
+            <symbol>first_word</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;FWContext::_unused&apos; is never used." verbose="struct member &apos;FWContext::_unused&apos; is never used." cwe="563" file0="D:/test/eCOOK3_firmware_OTA/project/AP/ota_commands.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/ota_commands.c" line="76" column="9"/>
+            <symbol>FWContext::_unused</symbol>
+        </error>
+        <error id="shiftTooManyBitsSigned" severity="error" msg="Shifting signed 32-bit value by 31 bits is undefined behaviour" verbose="Shifting signed 32-bit value by 31 bits is undefined behaviour" cwe="758" file0="D:/test/eCOOK3_firmware_OTA/project/AP/TouchFunction.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/TouchFunction.c" line="80" column="65" info="Shift"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;can_fetch_clbs&apos; is always true" verbose="Condition &apos;can_fetch_clbs&apos; is always true" cwe="571" file0="D:/test/eCOOK3_firmware_OTA/project/AP/RTC.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/RTC.c" line="364" column="6" info="Condition &apos;can_fetch_clbs&apos; is always true"/>
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/RTC.c" line="351" column="6" info="Assuming that condition &apos;!can_fetch_clbs&apos; is not redundant"/>
+        </error>
+        <error id="incorrectLogicOperator" severity="warning" msg="Logical conjunction always evaluates to false: numericStr[0] == &apos;0&apos; &amp;&amp; numericStr[0] == &apos;x&apos; || numericStr[0] == &apos;X&apos;." verbose="Logical conjunction always evaluates to false: numericStr[0] == &apos;0&apos; &amp;&amp; numericStr[0] == &apos;x&apos; || numericStr[0] == &apos;X&apos;. Are these conditions necessary? Did you intend to use || instead? Are the numbers correct? Are you comparing the correct variables?" cwe="570" file0="D:/test/eCOOK3_firmware_OTA/project/AP/cli.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/cli.c" line="180" column="30"/>
+        </error>
+        <error id="invalidPrintfArgType_sint" severity="portability" msg="%d in format string (no. 1) requires &apos;int&apos; but the argument type is &apos;u32 {aka unsigned int}&apos;." verbose="%d in format string (no. 1) requires &apos;int&apos; but the argument type is &apos;u32 {aka unsigned int}&apos;." cwe="686" file0="D:/test/eCOOK3_firmware_OTA/project/AP/cli.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/cli.c" line="570" column="8"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;clbs_attempt_count&lt;max_attempts&apos; is always true" verbose="Condition &apos;clbs_attempt_count&lt;max_attempts&apos; is always true" cwe="571" file0="D:/test/eCOOK3_firmware_OTA/project/AP/RTC.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/RTC.c" line="364" column="43" info="Condition &apos;clbs_attempt_count&lt;max_attempts&apos; is always true"/>
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/RTC.c" line="351" column="6" info="Assuming condition is false"/>
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/RTC.c" line="341" column="25" info="Assuming that condition &apos;clbs_attempt_count&gt;=max_attempts&apos; is not redundant"/>
+        </error>
+        <error id="invalidscanf" severity="warning" msg="sscanf() without field width limits can crash with huge input data." verbose="sscanf() without field width limits can crash with huge input data. Add a field width specifier to fix this problem.\012\012Sample program that can crash:\012\012#include &lt;stdio.h&gt;\012int main()\012{\012    char c[5];\012    scanf(&quot;%s&quot;, c);\012    return 0;\012}\012\012Typing in 5 or more characters may make the program crash. The correct usage here is &apos;scanf(&quot;%4s&quot;, c);&apos;, as the maximum field width does not include the terminating null byte.\012Source: http://linux.die.net/man/3/scanf\012Source: http://www.opensource.apple.com/source/xnu/xnu-1456.1.26/libkern/stdio/scanf.c" cwe="119" file0="D:/test/eCOOK3_firmware_OTA/project/AP/cli.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/cli.c" line="1241" column="18"/>
+        </error>
+        <error id="duplicateExpressionTernary" severity="style" msg="Same expression in both branches of ternary operator." verbose="Finding the same expression in both branches of ternary operator is suspicious as the same code is executed regardless of the condition." cwe="398" file0="D:/test/eCOOK3_firmware_OTA/project/AP/RTC.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/RTC.c" line="174" column="66"/>
+        </error>
+        <error id="nullPointerRedundantCheck" severity="warning" msg="Either the condition &apos;imei_end!=NULL&apos; is redundant or there is possible null pointer dereference: check_pos." verbose="Either the condition &apos;imei_end!=NULL&apos; is redundant or there is possible null pointer dereference: check_pos." cwe="476" file0="D:/test/eCOOK3_firmware_OTA/project/AP/Utils.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Utils.c" line="687" column="17" info="Null pointer dereference"/>
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Utils.c" line="695" column="30" info="Assignment to &apos;imei_end=check_pos&apos;"/>
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Utils.c" line="696" column="26" info="Assuming that condition &apos;imei_end!=NULL&apos; is not redundant"/>
+            <symbol>check_pos</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;c&apos; shadows outer variable" verbose="Local variable &apos;c&apos; shadows outer variable" cwe="398" file0="D:/test/eCOOK3_firmware_OTA/project/AP/USART1.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/USART1.c" line="97" column="10" info="Shadow local variable"/>
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/USART1.c" line="53" column="16" info="Shadowed variable"/>
+            <symbol>c</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;result&apos; shadows outer variable" verbose="Local variable &apos;result&apos; shadows outer variable" cwe="398" file0="D:/test/eCOOK3_firmware_OTA/project/AP/Utils.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Utils.c" line="360" column="17" info="Shadow local variable"/>
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Utils.h" line="114" column="22" info="Shadowed variable"/>
+            <symbol>result</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;input&apos; shadows outer variable" verbose="Local variable &apos;input&apos; shadows outer variable" cwe="398" file0="D:/test/eCOOK3_firmware_OTA/project/AP/cli.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/cli.c" line="278" column="7" info="Shadow local variable"/>
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/cli.c" line="55" column="13" info="Shadowed variable"/>
+            <symbol>input</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;result&apos; shadows outer variable" verbose="Local variable &apos;result&apos; shadows outer variable" cwe="398" file0="D:/test/eCOOK3_firmware_OTA/project/AP/Utils.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Utils.c" line="452" column="17" info="Shadow local variable"/>
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Utils.h" line="114" column="22" info="Shadowed variable"/>
+            <symbol>result</symbol>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;option_t::description&apos; is never used." verbose="struct member &apos;option_t::description&apos; is never used." cwe="563" file0="D:/test/eCOOK3_firmware_OTA/project/AP/cli.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/cli.c" line="41" column="17"/>
+            <symbol>option_t::description</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;result&apos; shadows outer variable" verbose="Local variable &apos;result&apos; shadows outer variable" cwe="398" file0="D:/test/eCOOK3_firmware_OTA/project/AP/Utils.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Utils.c" line="847" column="16" info="Shadow local variable"/>
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Utils.h" line="114" column="22" info="Shadowed variable"/>
+            <symbol>result</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;result&apos; shadows outer variable" verbose="Local variable &apos;result&apos; shadows outer variable" cwe="398" file0="D:/test/eCOOK3_firmware_OTA/project/AP/Utils.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Utils.c" line="1097" column="19" info="Shadow local variable"/>
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Utils.h" line="114" column="22" info="Shadowed variable"/>
+            <symbol>result</symbol>
+        </error>
+        <error id="duplicateBreak" severity="style" msg="Consecutive return, break, continue, goto or throw statements are unnecessary." verbose="Consecutive return, break, continue, goto or throw statements are unnecessary. The second statement can never be executed, and so should be removed." cwe="561" file0="D:/test/eCOOK3_firmware_OTA/project/AP/ht32f5xxxx_01_it.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/ht32f5xxxx_01_it.c" line="105" column="4"/>
+        </error>
+        <error id="unsignedLessThanZero" severity="style" msg="Checking if unsigned expression &apos;epoch_time&apos; is less than zero." verbose="The unsigned expression &apos;epoch_time&apos; will never be negative so it is either pointless or an error to check if it is." cwe="570" file0="D:/test/eCOOK3_firmware_OTA/project/AP/main.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/main.c" line="558" column="21" info="Unsigned less than zero"/>
+            <symbol>epoch_time</symbol>
+        </error>
+        <error id="duplicateBreak" severity="style" msg="Consecutive return, break, continue, goto or throw statements are unnecessary." verbose="Consecutive return, break, continue, goto or throw statements are unnecessary. The second statement can never be executed, and so should be removed." cwe="561" file0="D:/test/eCOOK3_firmware_OTA/project/AP/FSM.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/FSM.c" line="1102" column="6"/>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;updateAnimationActive&apos; shadows outer variable" verbose="Local variable &apos;updateAnimationActive&apos; shadows outer variable" cwe="398" file0="D:/test/eCOOK3_firmware_OTA/project/AP/FSM.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/FSM.c" line="395" column="15" info="Shadow local variable"/>
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/ota_commands.h" line="12" column="13" info="Shadowed variable"/>
+            <symbol>updateAnimationActive</symbol>
+        </error>
+        <error id="invalidPrintfArgType_sint" severity="warning" msg="%d in format string (no. 1) requires &apos;int&apos; but the argument type is &apos;unsigned int&apos;." verbose="%d in format string (no. 1) requires &apos;int&apos; but the argument type is &apos;unsigned int&apos;." cwe="686" file0="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c" line="744" column="5"/>
+        </error>
+        <error id="invalidPrintfArgType_sint" severity="warning" msg="%d in format string (no. 1) requires &apos;int&apos; but the argument type is &apos;unsigned int&apos;." verbose="%d in format string (no. 1) requires &apos;int&apos; but the argument type is &apos;unsigned int&apos;." cwe="686" file0="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c" line="790" column="3"/>
+        </error>
+        <error id="invalidPrintfArgType_sint" severity="warning" msg="%d in format string (no. 1) requires &apos;int&apos; but the argument type is &apos;unsigned int&apos;." verbose="%d in format string (no. 1) requires &apos;int&apos; but the argument type is &apos;unsigned int&apos;." cwe="686" file0="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c" line="791" column="5"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;tmp&apos; is assigned a value that is never used." verbose="Variable &apos;tmp&apos; is assigned a value that is never used." cwe="563" file0="D:/test/eCOOK3_firmware_OTA/utilities/common/spi_flash.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/utilities/common/spi_flash.c" line="548" column="48"/>
+            <symbol>tmp</symbol>
+        </error>
+        <error id="invalidPrintfArgType_sint" severity="portability" msg="%d in format string (no. 1) requires &apos;int&apos; but the argument type is &apos;u32 {aka unsigned int}&apos;." verbose="%d in format string (no. 1) requires &apos;int&apos; but the argument type is &apos;u32 {aka unsigned int}&apos;." cwe="686" file0="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c" line="1500" column="5"/>
+        </error>
+        <error id="invalidPrintfArgType_sint" severity="portability" msg="%d in format string (no. 1) requires &apos;int&apos; but the argument type is &apos;u32 {aka unsigned int}&apos;." verbose="%d in format string (no. 1) requires &apos;int&apos; but the argument type is &apos;u32 {aka unsigned int}&apos;." cwe="686" file0="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c" line="1904" column="5"/>
+        </error>
+        <error id="invalidPrintfArgType_sint" severity="portability" msg="%d in format string (no. 1) requires &apos;int&apos; but the argument type is &apos;u32 {aka unsigned int}&apos;." verbose="%d in format string (no. 1) requires &apos;int&apos; but the argument type is &apos;u32 {aka unsigned int}&apos;." cwe="686" file0="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c" line="1942" column="2"/>
+        </error>
+        <error id="shadowFunction" severity="style" msg="Argument &apos;delay&apos; shadows outer function" verbose="Argument &apos;delay&apos; shadows outer function" cwe="398" file0="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c" line="229" column="25" info="Shadow argument"/>
+            <location file="D:/test/eCOOK3_firmware_OTA/utilities/UART0.h" line="83" column="6" info="Shadowed function"/>
+            <symbol>delay</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;left&apos; shadows outer variable" verbose="Local variable &apos;left&apos; shadows outer variable" cwe="398" file0="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c" line="692" column="16" info="Shadow local variable"/>
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/FSM.h" line="39" column="14" info="Shadowed variable"/>
+            <symbol>left</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;result&apos; shadows outer variable" verbose="Local variable &apos;result&apos; shadows outer variable" cwe="398" file0="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c" line="1224" column="10" info="Shadow local variable"/>
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Utils.h" line="114" column="22" info="Shadowed variable"/>
+            <symbol>result</symbol>
+        </error>
+        <error id="bitwiseOnBoolean" severity="style" msg="Boolean expression &apos;*Sptr!=0&apos; is used in bitwise operation. Did you mean &apos;&amp;&amp;&apos;?" verbose="Boolean expression &apos;*Sptr!=0&apos; is used in bitwise operation. Did you mean &apos;&amp;&amp;&apos;?" cwe="398" inconclusive="true" file0="D:/test/eCOOK3_firmware_OTA/utilities/common/spi_lcd.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/utilities/common/spi_lcd.c" line="470" column="23"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;j&apos; is assigned a value that is never used." verbose="Variable &apos;j&apos; is assigned a value that is never used." cwe="563" file0="D:/test/eCOOK3_firmware_OTA/utilities/common/spi_lcd.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/utilities/common/spi_lcd.c" line="493" column="16"/>
+            <symbol>j</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;left&apos; shadows outer variable" verbose="Local variable &apos;left&apos; shadows outer variable" cwe="398" file0="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c" line="1707" column="17" info="Shadow local variable"/>
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/FSM.h" line="39" column="14" info="Shadowed variable"/>
+            <symbol>left</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;ImgAdds&apos; is assigned a value that is never used." verbose="Variable &apos;ImgAdds&apos; is assigned a value that is never used." cwe="563" file0="D:/test/eCOOK3_firmware_OTA/utilities/common/spi_lcd.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/utilities/common/spi_lcd.c" line="637" column="15"/>
+            <symbol>ImgAdds</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;j&apos; is assigned a value that is never used." verbose="Variable &apos;j&apos; is assigned a value that is never used." cwe="563" file0="D:/test/eCOOK3_firmware_OTA/utilities/common/spi_lcd.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/utilities/common/spi_lcd.c" line="639" column="16"/>
+            <symbol>j</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;color&apos; is assigned a value that is never used." verbose="Variable &apos;color&apos; is assigned a value that is never used." cwe="563" file0="D:/test/eCOOK3_firmware_OTA/utilities/common/spi_lcd.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/utilities/common/spi_lcd.c" line="639" column="27"/>
+            <symbol>color</symbol>
+        </error>
+        <error id="shadowVariable" severity="style" msg="Local variable &apos;updateAnimationActive&apos; shadows outer variable" verbose="Local variable &apos;updateAnimationActive&apos; shadows outer variable" cwe="398" file0="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c" line="2088" column="21" info="Shadow local variable"/>
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/ota_commands.h" line="12" column="13" info="Shadowed variable"/>
+            <symbol>updateAnimationActive</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;fileWriteComplete&apos; is assigned a value that is never used." verbose="Variable &apos;fileWriteComplete&apos; is assigned a value that is never used." cwe="563" file0="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/AP/Payload.c" line="2127" column="31"/>
+            <symbol>fileWriteComplete</symbol>
+        </error>
+    </errors>
+</results>

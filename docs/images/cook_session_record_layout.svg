@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 200" font-family="Segoe UI, Consolas, Arial, sans-serif">
+  <defs>
+    <style>
+      .title { font-size: 16px; font-weight: 700; fill: #1a1a2e; font-family: Segoe UI, Arial, sans-serif; }
+      .word-label { font-size: 11px; fill: #333; font-weight: 600; }
+      .bit-label { font-size: 9px; fill: #fff; }
+      .addr { font-size: 10px; fill: #555; }
+    </style>
+  </defs>
+
+  <text x="390" y="24" text-anchor="middle" class="title">Cook Session Record  20 Bytes (5 × 32-bit Flash Words)</text>
+
+  <!-- Word 0 -->
+  <rect x="20" y="45" width="140" height="36" fill="#4a6fa5" rx="3"/>
+  <text x="90" y="62" text-anchor="middle" class="bit-label" font-weight="700">Word 0 (+0)</text>
+  <rect x="20" y="81" width="35" height="28" fill="#7b5ea7"/><text x="37" y="99" text-anchor="middle" class="bit-label" font-size="8">pan</text><text x="37" y="110" text-anchor="middle" fill="#ddd" font-size="7">8b</text>
+  <rect x="55" y="81" width="105" height="28" fill="#b85c38"/><text x="107" y="99" text-anchor="middle" class="bit-label" font-size="8">onT [23:0]</text><text x="107" y="110" text-anchor="middle" fill="#ffe8dc" font-size="7">24b</text>
+
+  <!-- Word 1 -->
+  <rect x="170" y="45" width="140" height="36" fill="#4a6fa5" rx="3"/>
+  <text x="240" y="62" text-anchor="middle" class="bit-label" font-weight="700">Word 1 (+4)</text>
+  <rect x="170" y="81" width="35" height="28" fill="#b85c38"/><text x="187" y="99" text-anchor="middle" class="bit-label" font-size="8">onT</text><text x="187" y="110" text-anchor="middle" fill="#ffe8dc" font-size="7">[31:24]</text>
+  <rect x="205" y="81" width="105" height="28" fill="#c9a227"/><text x="257" y="99" text-anchor="middle" class="bit-label" font-size="8">offT [23:0]</text><text x="257" y="110" text-anchor="middle" fill="#fff8e0" font-size="7">24b</text>
+
+  <!-- Word 2 -->
+  <rect x="320" y="45" width="140" height="36" fill="#4a6fa5" rx="3"/>
+  <text x="390" y="62" text-anchor="middle" class="bit-label" font-weight="700">Word 2 (+8)</text>
+  <rect x="320" y="81" width="35" height="28" fill="#c9a227"/><text x="337" y="99" text-anchor="middle" class="bit-label" font-size="8">offT</text><text x="337" y="110" text-anchor="middle" fill="#fff8e0" font-size="7">[31:24]</text>
+  <rect x="355" y="81" width="70" height="28" fill="#5c7a4a"/><text x="390" y="99" text-anchor="middle" class="bit-label" font-size="8">pwr</text><text x="390" y="110" text-anchor="middle" fill="#e8f4ea" font-size="7">16b</text>
+  <rect x="425" y="81" width="35" height="28" fill="#ccc"/><text x="442" y="99" text-anchor="middle" fill="#666" font-size="7">pad</text>
+
+  <!-- Word 3 -->
+  <rect x="470" y="45" width="140" height="36" fill="#4a6fa5" rx="3"/>
+  <text x="540" y="62" text-anchor="middle" class="bit-label" font-weight="700">Word 3 (+12)</text>
+  <rect x="470" y="81" width="140" height="28" fill="#6b8f9c"/><text x="540" y="99" text-anchor="middle" class="bit-label" font-size="8">Ag (float IEEE-754)</text>
+
+  <!-- Word 4 -->
+  <rect x="620" y="45" width="140" height="36" fill="#4a6fa5" rx="3"/>
+  <text x="690" y="62" text-anchor="middle" class="bit-label" font-weight="700">Word 4 (+16)</text>
+  <rect x="620" y="81" width="140" height="28" fill="#6b8f9c"/><text x="690" y="99" text-anchor="middle" class="bit-label" font-size="8">Vg (float IEEE-754)</text>
+
+  <text x="390" y="140" text-anchor="middle" class="addr">PwrC is not stored  computed on read: (pwr × (offT  onT)) / 3600</text>
+  <text x="390" y="158" text-anchor="middle" class="addr">Base address: COOK_SESSION_BASE_ADDR + session_index × 20</text>
+  <text x="390" y="182" text-anchor="middle" fill="#888" font-size="10">Emulated_EEPROM_Write_Cook_Session() / Read_Cook_Session()  EEPROM.c</text>
+</svg>

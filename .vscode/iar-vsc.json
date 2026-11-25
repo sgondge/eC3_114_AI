@@ -1,0 +1,15 @@
+{
+  "workspace": {
+    "path": "${workspaceFolder}\\EWARMv8\\Project_54241.eww"
+  },
+  "workspaces": {
+    "${workspaceFolder}\\EWARMv8\\Project_54241.eww": {
+      "configs": {
+        "${workspaceFolder}\\EWARMv8\\Project_54241.ewp": "HT32"
+      },
+      "selected": {
+        "path": "${workspaceFolder}\\EWARMv8\\Project_54241.ewp"
+      }
+    }
+  }
+}

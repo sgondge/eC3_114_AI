@@ -1,0 +1,5 @@
+# Project-wide cppcheck suppressions, one per line: <id>[:<file>[:<line>]]
+# For a single occurrence prefer an inline comment in the source:  // cppcheck-suppress <id>
+# Examples:
+#   variableScope
+#   knownConditionTrueFalse:*\project\AP\EEPROM.c

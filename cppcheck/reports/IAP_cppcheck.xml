@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="2.21.0"/>
+    <errors>
+        <error id="invalidScanfArgType_int" severity="warning" msg="%x in format string (no. 1) requires &apos;unsigned int *&apos; but the argument type is &apos;signed int *&apos;." verbose="%x in format string (no. 1) requires &apos;unsigned int *&apos; but the argument type is &apos;signed int *&apos;." cwe="686" file0="D:/test/eCOOK3_firmware_OTA/project/IAP/main.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/IAP/main.c" line="84" column="9"/>
+        </error>
+        <error id="unreachableCode" severity="style" msg="Statements following noreturn function &apos;__NVIC_SystemReset()&apos; will never be executed." verbose="Statements following noreturn function &apos;__NVIC_SystemReset()&apos; will never be executed." cwe="561" file0="D:/test/eCOOK3_firmware_OTA/project/IAP/main.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/IAP/main.c" line="499" column="3"/>
+        </error>
+        <error id="unusedStructMember" severity="style" msg="struct member &apos;IntelHexRecord::checksum&apos; is never used." verbose="struct member &apos;IntelHexRecord::checksum&apos; is never used." cwe="563" file0="D:/test/eCOOK3_firmware_OTA/project/IAP/main.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/IAP/main.c" line="65" column="13"/>
+            <symbol>IntelHexRecord::checksum</symbol>
+        </error>
+        <error id="duplicateExpression" severity="style" msg="Same expression on both sides of &apos;-&apos; because &apos;bftm0_ct&apos; and &apos;start_time&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="D:/test/eCOOK3_firmware_OTA/project/IAP/BFTM0.c">
+            <location file="D:/test/eCOOK3_firmware_OTA/project/IAP/BFTM0.c" line="95" column="19"/>
+            <location file="D:/test/eCOOK3_firmware_OTA/project/IAP/BFTM0.c" line="94" column="24" info="&apos;start_time&apos; is assigned value &apos;bftm0_ct&apos; here."/>
+        </error>
+    </errors>
+</results>

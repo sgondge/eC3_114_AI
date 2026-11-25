@@ -1,0 +1,23 @@
+{
+    "exe": "C:\\Program Files\\Cppcheck\\cppcheck.exe",
+    "enable": "warning,style,performance,portability",
+    "std": "c99",
+    "platform": "arm32-wchar_t2",
+    "extraDefines": ["__CC_ARM", "__ARMCC_VERSION=5060960"],
+    "excludeSourcePattern": "\\\\library\\\\",
+    "suppress": [
+        "missingIncludeSystem",
+        "unmatchedSuppression",
+        "checkersReport",
+        "*:*\\library\\*",
+        "constVariablePointer",
+        "constParameterPointer",
+        "constParameter",
+        "variableScope",
+        "redundantInitialization"
+    ],
+    "projects": {
+        "Project_54253.uvprojx": "AP",
+        "IAP.uvprojx": "IAP"
+    }
+}

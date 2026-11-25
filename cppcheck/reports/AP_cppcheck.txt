@@ -1,0 +1,54 @@
+cppcheck report for Project_54253.uvprojx
+Generated: 2026-10-26 11:48:00   cppcheck: C:\Program Files\Cppcheck\cppcheck.exe
+Files analysed: 29
+
+D:\test\eCOOK3_firmware_OTA\project\AP\buzzer.c(37): error: [cppcheck] zerodiv: Division by zero.
+D:\test\eCOOK3_firmware_OTA\project\AP\TouchFunction.c(80): error: [cppcheck] shiftTooManyBitsSigned: Shifting signed 32-bit value by 31 bits is undefined behaviour
+D:\test\eCOOK3_firmware_OTA\project\AP\cli.c(180): warning: [cppcheck] incorrectLogicOperator: Logical conjunction always evaluates to false: numericStr[0] == '0' && numericStr[0] == 'x' || numericStr[0] == 'X'.
+D:\test\eCOOK3_firmware_OTA\project\AP\cli.c(1241): warning: [cppcheck] invalidscanf: sscanf() without field width limits can crash with huge input data.
+D:\test\eCOOK3_firmware_OTA\project\AP\Payload.c(744): warning: [cppcheck] invalidPrintfArgType_sint: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'.
+D:\test\eCOOK3_firmware_OTA\project\AP\Payload.c(790): warning: [cppcheck] invalidPrintfArgType_sint: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'.
+D:\test\eCOOK3_firmware_OTA\project\AP\Payload.c(791): warning: [cppcheck] invalidPrintfArgType_sint: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'.
+D:\test\eCOOK3_firmware_OTA\project\AP\Utils.c(687): warning: [cppcheck] nullPointerRedundantCheck: Either the condition 'imei_end!=NULL' is redundant or there is possible null pointer dereference: check_pos.
+D:\test\eCOOK3_firmware_OTA\project\AP\cli.c(41): note: [cppcheck] unusedStructMember: struct member 'option_t::description' is never used.
+D:\test\eCOOK3_firmware_OTA\project\AP\cli.c(278): note: [cppcheck] shadowVariable: Local variable 'input' shadows outer variable
+D:\test\eCOOK3_firmware_OTA\project\AP\cli.c(570): note: [cppcheck] invalidPrintfArgType_sint: %d in format string (no. 1) requires 'int' but the argument type is 'u32 {aka unsigned int}'.
+D:\test\eCOOK3_firmware_OTA\project\AP\EEPROM.c(145): note: [cppcheck] knownConditionTrueFalse: Condition 'cook_end>=opt_page' is always true
+D:\test\eCOOK3_firmware_OTA\project\AP\EEPROM.c(263): note: [cppcheck] knownConditionTrueFalse: Condition 'temp==-1' is always false
+D:\test\eCOOK3_firmware_OTA\project\AP\EEPROM.c(346): note: [cppcheck] unreadVariable: Variable 'write_address' is assigned a value that is never used.
+D:\test\eCOOK3_firmware_OTA\project\AP\EEPROM.c(433): note: [cppcheck] unreadVariable: Variable 'first_word' is assigned a value that is never used.
+D:\test\eCOOK3_firmware_OTA\project\AP\FSM.c(395): note: [cppcheck] shadowVariable: Local variable 'updateAnimationActive' shadows outer variable
+D:\test\eCOOK3_firmware_OTA\project\AP\FSM.c(1102): note: [cppcheck] duplicateBreak: Consecutive return, break, continue, goto or throw statements are unnecessary.
+D:\test\eCOOK3_firmware_OTA\project\AP\ht32f5xxxx_01_it.c(105): note: [cppcheck] duplicateBreak: Consecutive return, break, continue, goto or throw statements are unnecessary.
+D:\test\eCOOK3_firmware_OTA\project\AP\I2C0.c(83): note: [cppcheck] redundantAssignment: Variable 'CKCUClock.Bit.PC' is reassigned a value before the old one has been used.
+D:\test\eCOOK3_firmware_OTA\project\AP\I2C1.c(77): note: [cppcheck] redundantAssignment: Variable 'CKCUClock.Bit.PB' is reassigned a value before the old one has been used.
+D:\test\eCOOK3_firmware_OTA\project\AP\main.c(558): note: [cppcheck] unsignedLessThanZero: Checking if unsigned expression 'epoch_time' is less than zero.
+D:\test\eCOOK3_firmware_OTA\project\AP\ota_commands.c(76): note: [cppcheck] unusedStructMember: struct member 'FWContext::_unused' is never used.
+D:\test\eCOOK3_firmware_OTA\project\AP\Payload.c(229): note: [cppcheck] shadowFunction: Argument 'delay' shadows outer function
+D:\test\eCOOK3_firmware_OTA\project\AP\Payload.c(692): note: [cppcheck] shadowVariable: Local variable 'left' shadows outer variable
+D:\test\eCOOK3_firmware_OTA\project\AP\Payload.c(1224): note: [cppcheck] shadowVariable: Local variable 'result' shadows outer variable
+D:\test\eCOOK3_firmware_OTA\project\AP\Payload.c(1500): note: [cppcheck] invalidPrintfArgType_sint: %d in format string (no. 1) requires 'int' but the argument type is 'u32 {aka unsigned int}'.
+D:\test\eCOOK3_firmware_OTA\project\AP\Payload.c(1707): note: [cppcheck] shadowVariable: Local variable 'left' shadows outer variable
+D:\test\eCOOK3_firmware_OTA\project\AP\Payload.c(1904): note: [cppcheck] invalidPrintfArgType_sint: %d in format string (no. 1) requires 'int' but the argument type is 'u32 {aka unsigned int}'.
+D:\test\eCOOK3_firmware_OTA\project\AP\Payload.c(1942): note: [cppcheck] invalidPrintfArgType_sint: %d in format string (no. 1) requires 'int' but the argument type is 'u32 {aka unsigned int}'.
+D:\test\eCOOK3_firmware_OTA\project\AP\Payload.c(2088): note: [cppcheck] shadowVariable: Local variable 'updateAnimationActive' shadows outer variable
+D:\test\eCOOK3_firmware_OTA\project\AP\Payload.c(2127): note: [cppcheck] unreadVariable: Variable 'fileWriteComplete' is assigned a value that is never used.
+D:\test\eCOOK3_firmware_OTA\project\AP\RTC.c(174): note: [cppcheck] duplicateExpressionTernary: Same expression in both branches of ternary operator.
+D:\test\eCOOK3_firmware_OTA\project\AP\RTC.c(364): note: [cppcheck] knownConditionTrueFalse: Condition 'can_fetch_clbs' is always true
+D:\test\eCOOK3_firmware_OTA\project\AP\RTC.c(364): note: [cppcheck] knownConditionTrueFalse: Condition 'clbs_attempt_count<max_attempts' is always true
+D:\test\eCOOK3_firmware_OTA\project\AP\USART1.c(97): note: [cppcheck] shadowVariable: Local variable 'c' shadows outer variable
+D:\test\eCOOK3_firmware_OTA\project\AP\Utils.c(360): note: [cppcheck] shadowVariable: Local variable 'result' shadows outer variable
+D:\test\eCOOK3_firmware_OTA\project\AP\Utils.c(452): note: [cppcheck] shadowVariable: Local variable 'result' shadows outer variable
+D:\test\eCOOK3_firmware_OTA\project\AP\Utils.c(847): note: [cppcheck] shadowVariable: Local variable 'result' shadows outer variable
+D:\test\eCOOK3_firmware_OTA\project\AP\Utils.c(1097): note: [cppcheck] shadowVariable: Local variable 'result' shadows outer variable
+D:\test\eCOOK3_firmware_OTA\utilities\common\spi_flash.c(548): note: [cppcheck] unreadVariable: Variable 'tmp' is assigned a value that is never used.
+D:\test\eCOOK3_firmware_OTA\utilities\common\spi_lcd.c(470): note: [cppcheck] bitwiseOnBoolean: Boolean expression '*Sptr!=0' is used in bitwise operation. Did you mean '&&'?
+D:\test\eCOOK3_firmware_OTA\utilities\common\spi_lcd.c(493): note: [cppcheck] unreadVariable: Variable 'j' is assigned a value that is never used.
+D:\test\eCOOK3_firmware_OTA\utilities\common\spi_lcd.c(637): note: [cppcheck] unreadVariable: Variable 'ImgAdds' is assigned a value that is never used.
+D:\test\eCOOK3_firmware_OTA\utilities\common\spi_lcd.c(639): note: [cppcheck] unreadVariable: Variable 'j' is assigned a value that is never used.
+D:\test\eCOOK3_firmware_OTA\utilities\common\spi_lcd.c(639): note: [cppcheck] unreadVariable: Variable 'color' is assigned a value that is never used.
+
+ Findings: 45  (33 style, 6 warning, 4 portability, 2 error)
+ Most frequent: shadowVariable x11, unreadVariable x8, invalidPrintfArgType_sint x7, knownConditionTrueFalse x4, unusedStructMember x2, redundantAssignment x2
+ Time: 1.0s   Reports: D:\test\eCOOK3_firmware_OTA\cppcheck\reports\AP_cppcheck.xml, D:\test\eCOOK3_firmware_OTA\cppcheck\reports\AP_cppcheck.txt
+====================================================================================================

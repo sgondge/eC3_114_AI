@@ -1,0 +1,13 @@
+cppcheck report for IAP.uvprojx
+Generated: 2026-10-26 11:47:55   cppcheck: C:\Program Files\Cppcheck\cppcheck.exe
+Files analysed: 8
+
+D:\test\eCOOK3_firmware_OTA\project\IAP\main.c(84): warning: [cppcheck] invalidScanfArgType_int: %x in format string (no. 1) requires 'unsigned int *' but the argument type is 'signed int *'.
+D:\test\eCOOK3_firmware_OTA\project\IAP\BFTM0.c(95): note: [cppcheck] duplicateExpression: Same expression on both sides of '-' because 'bftm0_ct' and 'start_time' represent the same value.
+D:\test\eCOOK3_firmware_OTA\project\IAP\main.c(65): note: [cppcheck] unusedStructMember: struct member 'IntelHexRecord::checksum' is never used.
+D:\test\eCOOK3_firmware_OTA\project\IAP\main.c(499): note: [cppcheck] unreachableCode: Statements following noreturn function '__NVIC_SystemReset()' will never be executed.
+
+ Findings: 4  (3 style, 1 warning)
+ Most frequent: unusedStructMember x1, unreachableCode x1, invalidScanfArgType_int x1, duplicateExpression x1
+ Time: 1.0s   Reports: D:\test\eCOOK3_firmware_OTA\cppcheck\reports\IAP_cppcheck.xml, D:\test\eCOOK3_firmware_OTA\cppcheck\reports\IAP_cppcheck.txt
+====================================================================================================
